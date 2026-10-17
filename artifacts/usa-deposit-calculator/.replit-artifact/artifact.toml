@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "USADepositCalculator.com"
+description = "A practical guide to U.S. security deposit, HOA, rent increase, move-out, and landlord repair questions, with interactive calculators and state-law references."
+version = "1.0.0"
+id = "artifacts/usa-deposit-calculator"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23270
+
+[services.development]
+run = "pnpm --filter @workspace/usa-deposit-calculator run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/usa-deposit-calculator", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/usa-deposit-calculator/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23270"
+BASE_PATH = "/"
