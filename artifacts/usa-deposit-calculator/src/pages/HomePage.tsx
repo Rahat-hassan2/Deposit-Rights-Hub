@@ -17,7 +17,10 @@ export default function HomePage() {
       <p className="eyebrow">A clearer move-out starts here</p>
       <h1>US Security Deposit &amp; HOA Law Calculators 2026 - Know Your Rights</h1>
       <p className="lead">Practical, plain-English tools for renters checking deposits, deductions, repairs, rent changes, and housing costs. Enter your facts, see the math, then follow the source links that matter.</p>
-      <Link className="btn" href="/security-deposit-return-calculator">Explore the calculators <span aria-hidden="true">→</span></Link>
+      <div style={{display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '16px'}}>
+        <Link className="btn" href="/security-deposit-return-calculator">Explore the calculators <span aria-hidden="true">→</span></Link>
+        <a className="btn secondary" href="/security-deposit-laws-by-state-2026.html" style={{background: '#fff', border: '1px solid #e2e8f0'}}>📄 State Laws Guide 2026 →</a>
+      </div>
       <div className="trust-note"><i className="trust-dot" /><span>Client-side calculations · No account · No information submitted</span></div>
     </div><aside className="hero-panel" aria-label="Toolkit overview">
       <div className="panel-top"><span>THE RENTERS’ TOOLKIT</span><span>2026 edition</span></div>
@@ -25,6 +28,15 @@ export default function HomePage() {
       <div className="mini-stat"><div><strong>Local</strong><br /><span>rules still matter</span></div><div><strong>Yours</strong><br /><span>to review and edit</span></div></div>
       <p style={{ color: "#61758d", fontSize: 12, lineHeight: 1.6, margin: "17px 0 0" }}>A useful starting point—not a substitute for the lease, official law, or legal advice.</p>
     </aside></div></section>
+
+    {/* NEW SEO BANNER FOR ARTICLE */}
+    <section style={{background: '#f0f9ff', borderTop: '1px solid #e0f2fe', borderBottom: '1px solid #e0f2fe', padding: '18px 0'}}>
+      <div className="container" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '12px'}}>
+        <div><strong>New for 2026:</strong> Complete 50-State Security Deposit Laws – deadlines, limits & penalties by state</div>
+        <a href="/security-deposit-laws-by-state-2026.html" style={{fontWeight: 700, color: '#0c4a6e', textDecoration: 'underline'}}>Read Full Guide →</a>
+      </div>
+    </section>
+
     <section className="section" id="calculators"><div className="container">
       <div className="section-head"><div><p className="eyebrow">Choose your next step</p><h2>Tools for the questions renters actually ask</h2><p className="section-intro">Each calculator shows the inputs behind the result and links to a primary source where available.</p></div></div>
        <div className="tool-grid">{tools.map((t, i) => { const Icon = cardIcons[i]; return <Link href={`/${t.slug}`} key={t.slug} className="tool-card" data-testid={`card-tool-${t.slug}`}><span className="tool-icon"><Icon size={19} strokeWidth={1.9} aria-hidden="true" /></span><strong>{t.shortTitle}</strong><span className="desc">{t.description}</span><span className="card-arrow">Open calculator <span aria-hidden="true">→</span></span></Link>; })}</div>
@@ -52,8 +64,8 @@ export default function HomePage() {
       <h3>Local variation is not a footnote</h3>
       <p>Statewide statutes are a starting point, not the entire map. Cities and counties may have rent stabilization, registration requirements, additional notice rules, or tenant protections that change the analysis. Federal protections may apply in particular circumstances. A rule can also depend on when a lease began, when a deposit was received, whether a property is exempt, or whether the renter is a service member. When a tool flags a general rule, follow the official source and seek local help if the answer affects a deadline or significant amount of money.</p>
       <p>Use these calculators to make the facts visible: enter dates carefully, check every amount, and save or print the result for your own records. The editable letter templates are a starting point for a clear, respectful message. Replace every bracketed placeholder, attach relevant documentation, and adapt the language to the facts. No template guarantees a response or a legal outcome.</p>
-    </article><aside className="side-box"><h3>Quick tools</h3>{tools.map(t => <Link href={`/${t.slug}`} key={t.slug}>{t.shortTitle} <span aria-hidden="true">→</span></Link>)}<Link href="#sources">Official sources</Link></aside></div></section>
+    </article><aside className="side-box"><h3>Quick tools</h3>{tools.map(t => <Link href={`/${t.slug}`} key={t.slug}>{t.shortTitle} <span aria-hidden="true">→</span></Link>)}<a href="/security-deposit-laws-by-state-2026.html">📄 State Laws Guide 2026</a><Link href="#sources">Official sources</Link></aside></div></section>
     <section className="section" style={{ paddingTop: 0 }}><div className="container"><SourceList /></div></section>
     <FAQSection faqs={homeFaqs} />
   </SiteLayout>;
-}
+        }
