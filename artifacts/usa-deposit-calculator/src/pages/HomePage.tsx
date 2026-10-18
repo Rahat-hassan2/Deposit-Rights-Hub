@@ -54,6 +54,12 @@ export default function HomePage() {
       <p>Use these calculators to make the facts visible: enter dates carefully, check every amount, and save or print the result for your own records. The editable letter templates are a starting point for a clear, respectful message. Replace every bracketed placeholder, attach relevant documentation, and adapt the language to the facts. No template guarantees a response or a legal outcome.</p>
     </article><aside className="side-box"><h3>Quick tools</h3>{tools.map(t => <Link href={`/${t.slug}`} key={t.slug}>{t.shortTitle} <span aria-hidden="true">→</span></Link>)}<Link href="#sources">Official sources</Link></aside></div></section>
     <section className="section" style={{ paddingTop: 0 }}><div className="container"><SourceList /></div></section>
+    <div style={{padding: '20px', background: '#f5f5f5', marginTop: '30px', borderRadius: '8px'}}>
+  <h3>📚 Latest Guides</h3>
+  <a href="/security-deposit-laws-by-state-2026.html" style={{color: '#0070f3', fontWeight: 'bold'}}>
+    Security Deposit Laws by State 2026 - Complete Guide
+  </a>
+</div>
     <FAQSection faqs={homeFaqs} />
   </SiteLayout>;
    }
